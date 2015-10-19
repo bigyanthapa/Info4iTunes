@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titlebackgroundcolor">#4d01cd</color>
+    <color name="titletextcolor">#ffc15c</color>
+
+    <color name="detailsViewBackground">#EFFBF8</color>
+    <color name="detailsViewTitleColor">#5858FA</color>
+    <color name="detailsViewDescColor">#0B6138</color>
+    <color name="buttonBackgroundColor">#E0F8F1</color>
+
+</resources>
