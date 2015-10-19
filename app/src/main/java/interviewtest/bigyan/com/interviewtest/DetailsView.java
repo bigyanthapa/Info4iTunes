@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import interviewtest.bigyan.com.interviewtest.model.DescriptionModel;
@@ -14,7 +14,7 @@ import interviewtest.bigyan.com.interviewtest.model.DescriptionModel;
 public class DetailsView extends Activity {
 
 
-    private Button backButton;
+    private ImageButton backImageButton;
 
     private TextView collectionTitleTextView;
     private TextView collectionNameTextView;
@@ -26,15 +26,16 @@ public class DetailsView extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_view);
 
-        backButton = (Button)findViewById(R.id.backButton);
 
-        Intent intent=getIntent();
-        DescriptionModel descriptionModel=(DescriptionModel)  intent.getSerializableExtra("obj");
+        backImageButton = (ImageButton) findViewById(R.id.backImageButton);
 
-        collectionTitleTextView = (TextView)findViewById(R.id.collectionTitleTextView);
-        collectionNameTextView = (TextView)findViewById(R.id.collectionNameTextView);
-        collectionPriceTextView = (TextView)findViewById(R.id.collectionPriceTextView);
-        trackPriceTextView = (TextView)findViewById(R.id.trackPriceTextView);
+        Intent intent = getIntent();
+        DescriptionModel descriptionModel = (DescriptionModel) intent.getSerializableExtra("obj");
+
+        collectionTitleTextView = (TextView) findViewById(R.id.collectionTitleTextView);
+        collectionNameTextView = (TextView) findViewById(R.id.collectionNameTextView);
+        collectionPriceTextView = (TextView) findViewById(R.id.collectionPriceTextView);
+        trackPriceTextView = (TextView) findViewById(R.id.trackPriceTextView);
 
 
         collectionTitleTextView.setText(descriptionModel.getTitle());
@@ -42,11 +43,11 @@ public class DetailsView extends Activity {
         collectionPriceTextView.setText(descriptionModel.getCollectionPrice());
         trackPriceTextView.setText(descriptionModel.getTrackPrice());
 
-        //return to the main activity when the back button is clicked
-        backButton.setOnClickListener(new View.OnClickListener() {
+
+        backImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mainIntent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainIntent);
                 finish();
             }
@@ -63,7 +64,8 @@ public class DetailsView extends Activity {
 
     //Just allow my return button to take the application to the previous activity.
     @Override
-    public void onBackPressed() { }
+    public void onBackPressed() {
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -9,67 +9,102 @@
     android:background="@color/detailsViewBackground">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Title"
         android:textColor="@color/detailsViewTitleColor"
         android:id="@+id/collectionTitleTextView"
-        android:layout_alignParentTop="true"
+        android:textSize="45dp"
+        android:layout_below="@+id/backImageButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="45dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="CollectionName"
         android:textColor="@color/detailsViewDescColor"
         android:id="@+id/collectionNameTextView"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:textStyle="italic"
+        android:layout_below="@+id/collectionNameText"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/collectionTitleTextView"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="65dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="CollectionPrice"
         android:textColor="@color/detailsViewDescColor"
         android:id="@+id/collectionPriceTextView"
         android:textStyle="italic"
-        android:textSize="25dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/collectionPriceText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="TrackPrice"
+        android:id="@+id/trackPriceTextView"
+        android:textColor="@color/detailsViewDescColor"
+        android:textStyle="italic"
+        android:textSize="20dp"
+        android:layout_below="@+id/trackPriceText"
+        android:layout_alignLeft="@+id/collectionPriceTextView"
+        android:layout_alignStart="@+id/collectionPriceTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Collection Name"
+        android:textColor="@color/detailsViewLabelColor"
+        android:id="@+id/collectionNameText"
+        android:textSize="30dp"
+        android:layout_below="@+id/collectionTitleTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Collection Price"
+        android:textColor="@color/detailsViewLabelColor"
+        android:id="@+id/collectionPriceText"
+        android:textSize="30dp"
         android:layout_below="@+id/collectionNameTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="15dp" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="TrackPrice"
-        android:id="@+id/trackPriceTextView"
+        android:text="Track Price"
+        android:textColor="@color/detailsViewLabelColor"
+        android:id="@+id/trackPriceText"
+        android:textSize="30dp"
         android:layout_below="@+id/collectionPriceTextView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textStyle="italic"
-        android:textSize="25dp"
         android:layout_marginTop="15dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Return"
-        android:background="@color/buttonBackgroundColor"
-        android:id="@+id/backButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/trackPriceTextView"
-        android:layout_alignEnd="@+id/trackPriceTextView"
-        android:padding="@dimen/activity_horizontal_margin"/>
+    <ImageButton
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:id="@+id/backImageButton"
+        android:background="@drawable/go_back_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
