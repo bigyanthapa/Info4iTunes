@@ -21,6 +21,8 @@ public class DetailsView extends Activity {
     private TextView collectionPriceTextView;
     private TextView trackPriceTextView;
 
+    private String url;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class DetailsView extends Activity {
         Intent intent = getIntent();
         DescriptionModel descriptionModel = (DescriptionModel) intent.getSerializableExtra("obj");
 
+        url = intent.getStringExtra("url");
         collectionTitleTextView = (TextView) findViewById(R.id.collectionTitleTextView);
         collectionNameTextView = (TextView) findViewById(R.id.collectionNameTextView);
         collectionPriceTextView = (TextView) findViewById(R.id.collectionPriceTextView);
@@ -48,6 +51,7 @@ public class DetailsView extends Activity {
             @Override
             public void onClick(View view) {
                 Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
+                mainIntent.putExtra("url",url);
                 startActivity(mainIntent);
                 finish();
             }

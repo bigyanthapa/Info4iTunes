@@ -9,4 +9,5 @@
 
     <color name="selected">#824986</color>
     <color name="unselected">#E4DFEC</color>
+    <string name="title_activity_main_activity_to_search">MainActivityToSearch</string>
 </resources>

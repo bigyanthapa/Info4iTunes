@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,12 +47,17 @@ public class MainActivity extends Activity {
     SQLiteHandler db;
 
     //Given String to test
-    final String URL = "https://itunes.apple.com/search?term=jack+johnson&limit=25";
+   // final String URL = "https://itunes.apple.com/search?term=jack+johnson&limit=25";
+
+    private String url = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Now Receive url name
+        url= getIntent().getStringExtra("url");
 
         //create a custom ActionBar
         createCutomActionBarTitle();
@@ -91,6 +95,7 @@ public class MainActivity extends Activity {
 
                 Intent mIntent = new Intent(view.getContext(), DetailsView.class);
                 mIntent.putExtra("obj", descriptionModelList.get(position));
+                mIntent.putExtra("url",url);
                 startActivityForResult(mIntent, 0);
 
             }
@@ -106,7 +111,7 @@ public class MainActivity extends Activity {
 
         RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, URL, null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -197,7 +202,9 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
 
-        Toast.makeText(getApplicationContext(),"Press Home Button to exit",Toast.LENGTH_SHORT);
+        Intent mainIntent = new Intent(getApplicationContext(), MainActivityToSearch.class);
+        startActivity(mainIntent);
+        finish();
     }
     //custom action bar title
 
